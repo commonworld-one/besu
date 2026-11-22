@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   unitTests:
-    runs-on: besu-research-ubuntu-16
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
       contents: read

@@ -7,9 +7,6 @@ on:
         description: 'Container image tag'
         required: false
         default: 'develop'      
-  schedule:
-    # Start of the hour is the busy time. Schedule it to run 8:17am UTC
-    - cron:  '17 8 * * *'
 
 jobs:
   scan-sarif:
@@ -41,9 +38,7 @@ jobs:
           format: sarif
           output: 'trivy-results.sarif'
           # Don't store the ~1 GiB vulnerability DB in the Actions cache. This is a
-          # once-daily scan, so a single DB download per run won't rate-limit, and the
-          # default date-keyed cache entries otherwise accumulate against the 10 GB
-          # repo cache budget (one new ~1 GiB entry per day until 7-day eviction).
+          # The scan is manual in this fork; avoid retaining the large vulnerability DB.
           cache: false
 
       # Check the vulnerabilities via GitHub security tab

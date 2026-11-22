@@ -35,6 +35,8 @@ env:
 
 jobs:
   build:
+    # This pipeline publishes Besu releases; Commonworld needs its own release target.
+    if: github.repository == 'besu-eth/besu'
     runs-on: ubuntu-latest
     permissions:
       actions: write

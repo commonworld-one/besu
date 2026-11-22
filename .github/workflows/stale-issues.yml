@@ -5,6 +5,8 @@ on:
 
 jobs:
   close-issues:
+    # Keep automatic issue/PR closing scoped to the upstream repository.
+    if: github.repository == 'besu-eth/besu'
     runs-on: ubuntu-latest
     permissions:
       issues: write
