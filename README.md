@@ -1,4 +1,61 @@
-# Besu Ethereum Client
+<p align="center">
+  <a href="https://commonworld.one/">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/commonworld-one/commonworld/main/docs/assets/banner-commonworld-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/commonworld-one/commonworld/main/docs/assets/banner-commonworld-light.svg">
+      <img alt="Commonworld. A shared world for humans and agents." src="https://raw.githubusercontent.com/commonworld-one/commonworld/main/docs/assets/banner-commonworld-light.svg" width="880">
+    </picture>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://commonworld.one/">Commonworld</a> ·
+  <a href="https://commonworld.one/atlas/">Atlas</a> ·
+  <a href="https://raise.commonworld.one/">RAISE</a> ·
+  <a href="https://github.com/commonworld-one/commonworld-testnet">Commonworld Testnet</a> ·
+  <a href="https://explorer-testnet.commonworld.one/">Testnet Explorer</a> ·
+  <a href="https://rpc-testnet.commonworld.one/">Testnet RPC</a>
+</p>
+
+# Commonworld Besu
+
+Commonworld's source fork of [Besu](https://github.com/besu-eth/besu), the Apache-2.0 Ethereum execution client. Network configuration and genesis are maintained separately in [Commonworld Testnet](https://github.com/commonworld-one/commonworld-testnet).
+
+> Status: experimental Commonworld Testnet client source. The deployment facts below are copied from the network passport and are dated evidence, not a fresh server check.
+
+## Current Commonworld Testnet client
+
+| Field | Recorded value |
+|---|---|
+| Besu version | `26.11.0` |
+| Upstream source | Tag [`26.11.0`](https://github.com/besu-eth/besu/tree/26.11.0), commit `0e595f9eaf4b760ee7069fcdf8d901685f1641eb` |
+| Image | `hyperledger/besu@sha256:3d6ac0368d449c13c4ba075acac90d6b96afa5b3113295385d88c4d5122c8808` (`linux/amd64`) |
+| Network profile | [Commonworld Testnet execution and storage record](https://github.com/commonworld-one/commonworld-testnet/blob/main/docs/NETWORK.md) |
+
+The network passport records this upstream image and source version as verified on 21 November 2026. This repository does not build or deploy the image. Its `main` branch preserves the source baseline; the chain's genesis, runtime settings, and deployment record stay in the network repository.
+
+Upstream Besu `26.11.1` was released on 18 November 2026. It is not recorded as deployed on Commonworld Testnet; review and testing are separate from updating this source fork. See the [upstream release notes](https://github.com/besu-eth/besu/releases/tag/26.11.1).
+
+## Branches
+
+- `main` is the Besu source baseline recorded for the current Commonworld Testnet deployment.
+- `commonworld-testnet` is the working branch for candidate client changes. Promote a commit to `main` only after it has been reviewed, tested, and deployed.
+- `upstream-main` preserves the upstream `main` tip captured when this fork was created. Refresh it deliberately when comparing upstream changes.
+
+## Plugins
+
+Besu plugins are separate Java extensions built against a specific Besu Plugin API version. Any Commonworld plugin will be versioned and checksummed separately; it will not be silently bundled into this client source. Start with the [Besu plugin guide](https://docs.besu-eth.org/plugins) and its [quickstart](https://docs.besu-eth.org/plugins/get-started/quickstart).
+
+## Upstream and attribution
+
+This is a GitHub fork of [`besu-eth/besu`](https://github.com/besu-eth/besu). Upstream history and the Apache-2.0 [license](LICENSE) are retained. The upstream documentation and project links below remain useful for Besu operation and development; upstream badges refer to upstream checks, not a Commonworld build.
+
+---
+
+## Upstream Besu documentation
+
+The following project documentation is retained from upstream.
+
  [![CodeQL](https://github.com/besu-eth/besu/actions/workflows/codeql.yml/badge.svg)](https://github.com/besu-eth/besu/actions/workflows/codeql.yml)
  [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/3174/badge)](https://www.bestpractices.dev/en/projects/3174)
  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/besu-eth/besu/blob/main/LICENSE)
